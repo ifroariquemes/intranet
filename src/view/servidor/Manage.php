@@ -4,7 +4,7 @@
     <div class="col-lg-12 text-right">        
         <form id="FrmSearch" class="form-inline" onsubmit="servidor.search(event)">            
             <div class="form-group">   
-                <a href="#" class="btn btn-sm btn-warning" id="searchClean" style="display: none" onclick="servidor.clear(event)"> <i class="fa fa-eraser"></i> <?php _e('Stop searching', 'servidor') ?></a>
+                <a href="#" class="btn btn-sm btn-warning" id="searchClean" style="display: none" onclick="servidor.clear(event)"> <i class="fa fa-eraser"></i> <?php _e('Parar busca', 'servidor') ?></a>
                 <input type="text" name="nome" id="textNome" class="form-control" value="" placeholder="pesquisa rápida...">                            
             </div>                        
             <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> Procurar</button>
@@ -50,7 +50,7 @@
 <script type="text/javascript">
     require(['jquery'], function($) {
         $(function() {
-            $('#textName').focus();
+            $('#textNome').focus();
             $('.pagination li').click(function() {
                 location.href = '#page-title';
             });

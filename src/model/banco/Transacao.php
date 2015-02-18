@@ -10,6 +10,9 @@ use lib\util\Object;
  */
 class Transacao extends Object {
 
+    const TIPO_DEPOSITO = 'DEPÓSITO';
+    const TIPO_RETIRADA = 'RETIRADA';
+
     /** @Column(type="integer") @Id @GeneratedValue */
     private $id;
 
@@ -23,12 +26,12 @@ class Transacao extends Object {
     private $tipo; // Entrada ou Saída
 
     /** @Column(type="integer") */
-    private $aulas;
+    private $aulas;        
 
     /** @Column(type="datetime") */
     private $datahora;
 
-    /** @Column(type="string") */
+    /** @Column(type="string", nullable=true) */
     private $observacao;
 
     function __construct() {
@@ -52,7 +55,7 @@ class Transacao extends Object {
     }
 
     function getDatahora() {
-        return $this->datahora;
+        return $this->datahora->format('d/m/Y h:i:s');
     }
 
     function getObservacao() {

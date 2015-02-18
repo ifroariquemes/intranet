@@ -1,5 +1,5 @@
 <?php
-
+namespace lib\util;
 /**
  * FUNCOES GLOBAIS :: DATA
  *
@@ -18,7 +18,7 @@
  * @version     1.04
  * @link        http://www.fabricadecodigo.com.br/
  */
-class CMS_Data {
+class Date {
 
     // <editor-fold defaultstate="collapsed" desc="static public AdicionarDias($dias, $data = -1)">
     /**
@@ -30,9 +30,9 @@ class CMS_Data {
      * @since 1.01
      * @author Natanael Simoes
      *
-     * @uses GF_Data::Ano()
-     * @uses GF_Data::Dia()
-     * @uses GF_Data::Mes()
+     * @uses self::Ano()
+     * @uses self::Dia()
+     * @uses self::Mes()
      * @uses DateTime::__construct()
      * @uses DateTime::setDate()
      * @uses DateTime::format()
@@ -43,7 +43,7 @@ class CMS_Data {
      */
     static public function AdicionarDias($dias, $data = -1) {
         $new_data = new DateTime();
-        $new_data->setDate(GF_Data::Ano($data), GF_Data::Mes($data), GF_Data::Dia($data) + $dias);
+        $new_data->setDate(self::Ano($data), self::Mes($data), self::Dia($data) + $dias);
         return $new_data->format('d/m/Y');
     }
 
@@ -58,9 +58,9 @@ class CMS_Data {
      * @since 1.01
      * @author Natanael Simoes
      *
-     * @uses GF_Data::Ano()
-     * @uses GF_Data::Dia()
-     * @uses GF_Data::Mes()
+     * @uses self::Ano()
+     * @uses self::Dia()
+     * @uses self::Mes()
      * @uses DateTime::__construct()
      * @uses DateTime::setDate()
      * @uses DateTime::format()
@@ -71,7 +71,7 @@ class CMS_Data {
      */
     static function AdicionarMeses($meses, $data = -1) {
         $new_data = new DateTime();
-        $new_data->setDate(GF_Data::Ano($data), GF_Data::Mes($data) + $meses, GF_Data::Dia($data));
+        $new_data->setDate(self::Ano($data), self::Mes($data) + $meses, self::Dia($data));
         return $new_data->format('d/m/Y');
     }
 
@@ -86,9 +86,9 @@ class CMS_Data {
      * @since 1.01
      * @author Natanael Simoes
      *
-     * @uses GF_Data::Ano()
-     * @uses GF_Data::Dia()
-     * @uses GF_Data::Mes()
+     * @uses self::Ano()
+     * @uses self::Dia()
+     * @uses self::Mes()
      * @uses DateTime::__construct()
      * @uses DateTime::setDate()
      * @uses DateTime::format()
@@ -99,7 +99,7 @@ class CMS_Data {
      */
     static function AdicionarAnos($anos, $data = -1) {
         $new_data = new DateTime();
-        $new_data->setDate(GF_Data::Ano($data) + $anos, GF_Data::Mes($data), GF_Data::Dia($data));
+        $new_data->setDate(self::Ano($data) + $anos, self::Mes($data), self::Dia($data));
         return $new_data->format('d/m/Y');
     }
 
@@ -114,13 +114,13 @@ class CMS_Data {
      * @since 1.01
      * @author Natanael Simoes
      *
-     * @uses GF_Data::ToPtBR()
+     * @uses self::ToPtBR()
      *
      * @param string $data Caso uma data nao seja informada, a data atual sera utilizada
      * @return string
      */
     static public function Ano($data = -1) {
-        return substr(GF_Data::ToPtBR($data), 6, 4);
+        return substr(self::ToPtBR($data), 6, 4);
     }
 
     // </editor-fold>
@@ -134,15 +134,15 @@ class CMS_Data {
      * @since 1.00
      * @author Natanael Simoes
      *
-     * @uses GF_Data::Ano()
-     * @uses GF_Data::Dia()
-     * @uses GF_Data::Mes()
+     * @uses self::Ano()
+     * @uses self::Dia()
+     * @uses self::Mes()
      *
      * @param string $data Caso uma data nao seja informada, a data atual sera utilizada
      * @return string
      */
     static function DataCurta($data = -1) {
-        return GF_Data::Dia($data) . '/' . GF_Data::Mes($data) . '/' . substr(GF_Data::Ano($data), 2, 2);
+        return self::Dia($data) . '/' . self::Mes($data) . '/' . substr(self::Ano($data), 2, 2);
     }
 
     // </editor-fold>
@@ -156,15 +156,15 @@ class CMS_Data {
      * @since 1.00
      * @author Natanael Simoes
      *
-     * @uses GF_Data::Ano()
-     * @uses GF_Data::Dia()
-     * @uses GF_Data::Mes()
+     * @uses self::Ano()
+     * @uses self::Dia()
+     * @uses self::Mes()
      *
      * @param string $data Caso uma data nao seja informada, a data atual sera utilizada
      * @return string
      */
     static function DataLonga($data = -1) {
-        return GF_Data::DiaSemana($data) . ', ' . GF_Data::Dia($data) . ' de ' . GF_Data::MesNome(GF_Data::Mes($data)) . ' de ' . GF_Data::Ano($data);
+        return self::DiaSemana($data) . ', ' . self::Dia($data) . ' de ' . self::MesNome(self::Mes($data)) . ' de ' . self::Ano($data);
     }
 
     // </editor-fold>
@@ -178,13 +178,13 @@ class CMS_Data {
      * @since 1.00
      * @author Natanael Simoes
      *
-     * @uses GF_Data::ToPtBR()
+     * @uses self::ToPtBR()
      *
      * @param string $data Caso uma data nao seja informada, a data atual sera utilizada
      * @return string
      */
     static function Dia($data = -1) {
-        return substr(GF_Data::ToPtBR($data), 0, 2);
+        return substr(self::ToPtBR($data), 0, 2);
     }
 
     // </editor-fold>
@@ -198,14 +198,14 @@ class CMS_Data {
      * @since 1.00
      * @author Natanael Simoes
      *
-     * @uses GF_Data::ToPtBR()
+     * @uses self::ToPtBR()
      *
      * @param string $data Caso uma data nao seja informada, a data atual sera utilizada
      * @return string
      */
     static function DiaSemana($data = -1) {
 
-        $data = GF_Data::ToPtBR($data);
+        $data = self::ToPtBR($data);
 
         $diasemana = date("w", mktime(0, 0, 0, substr($data, 3, 2), substr($data, 0, 2), substr($data, 6, 4)));
 
@@ -231,9 +231,9 @@ class CMS_Data {
      * @since 1.03
      * @author Natanael Simoes
      *
-     * @uses GF_Data::Ano()
-     * @uses GF_Data::Dia()
-     * @uses GF_Data::Mes()
+     * @uses self::Ano()
+     * @uses self::Dia()
+     * @uses self::Mes()
      * @uses DateTime::__construct()
      * @uses DateTime::setDate()
      * @uses DateTime::format()
@@ -250,7 +250,7 @@ class CMS_Data {
         $formato = str_replace('aa', 'y', $formato);
 
         $new_data = new DateTime();
-        $new_data->setDate(GF_Data::Ano($data) + $anos, GF_Data::Mes($data), GF_Data::Dia($data));
+        $new_data->setDate(self::Ano($data) + $anos, self::Mes($data), self::Dia($data));
         return $new_data->format($formato);
     }
 
@@ -265,13 +265,13 @@ class CMS_Data {
      * @since 1.00
      * @author Natanael Simoes
      *
-     * @uses GF_Data::ToPtBR()
+     * @uses self::ToPtBR()
      *
      * @param string $data Caso uma data nao seja informada, a data atual sera utilizada
      * @return string
      */
     static function Mes($data = -1) {
-        return substr(GF_Data::ToPtBR($data), 3, 2);
+        return substr(self::ToPtBR($data), 3, 2);
     }
 
     // </editor-fold>
@@ -285,7 +285,7 @@ class CMS_Data {
      * @since 1.00
      * @author Natanael Simoes
      *
-     * @uses GF_Data::Mes()
+     * @uses self::Mes()
      * 
      * @param string|integer $mes Pode ser o numero do mes (1-12) ou uma data. Caso a variavel nao seja informada, o mes atual sera utilizado
      * @return string
@@ -295,7 +295,7 @@ class CMS_Data {
         if ($mes == -1)
             $mes = date('M');
         else if (strlen($mes) >= 8)
-            $mes = GF_Data::Mes($mes);
+            $mes = self::Mes($mes);
 
         switch ($mes) {
             case '01': case 1: return 'Janeiro';
@@ -374,7 +374,7 @@ class CMS_Data {
      */
     static function SubtrairDias($dias, $data = -1) {
         $new_data = new DateTime();
-        $new_data->setDate(GF_Data::Ano($data), GF_Data::Mes($data), GF_Data::Dia($data) - $dias);
+        $new_data->setDate(self::Ano($data), self::Mes($data), self::Dia($data) - $dias);
         return $new_data->format('d/m/Y');
     }
 
@@ -395,7 +395,7 @@ class CMS_Data {
      */
     static function SubtrairMeses($meses, $data = -1) {
         $new_data = new DateTime();
-        $new_data->setDate(GF_Data::Ano($data), GF_Data::Mes($data) - $meses, GF_Data::Dia($data));
+        $new_data->setDate(self::Ano($data), self::Mes($data) - $meses, self::Dia($data));
         return $new_data->format('d/m/Y');
     }
 
@@ -416,7 +416,7 @@ class CMS_Data {
      */
     static function SubtrairAnos($anos, $data = -1) {
         $new_data = new DateTime();
-        $new_data->setDate(GF_Data::Ano($data) - $anos, GF_Data::Mes($data), GF_Data::Dia($data));
+        $new_data->setDate(self::Ano($data) - $anos, self::Mes($data), self::Dia($data));
         return $new_data->format('d/m/Y');
     }
 

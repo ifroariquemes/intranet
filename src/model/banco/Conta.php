@@ -67,5 +67,15 @@ class Conta extends Object {
         $this->transacoes = $transacoes;
         return $this;
     }
+    
+    function Depositar($aulas) {
+        $this->saldo += $aulas;
+        return $this;
+    }
+    
+    function Retirar($aulas) {
+        $this->saldo -= $aulas;
+        return $this;
+    }
 
 }

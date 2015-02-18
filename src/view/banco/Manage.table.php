@@ -17,15 +17,18 @@ $uid = uniqid();
                 <tbody>                                    
                     <?php
                     foreach ($page as $conta) :
-                        $url = $_MyCookie->mountLink('administrator', 'banco', 'depositar', $conta->getId());                        
+                        $urlDep = $_MyCookie->mountLink('administrator', 'banco', 'addDeposito', $conta->getId());
+                        $urlRet = $_MyCookie->mountLink('administrator', 'banco', 'addRetirada', $conta->getId());
+                        $urlTra = $_MyCookie->mountLink('administrator', 'banco', 'transacoes', $conta->getId());
                         ?>
                         <tr>          
                             <td><?php echo $conta->getServidor()->getNome(); ?></td> 
                             <td><?php echo $conta->getServidor()->getSiape() ?></td>
                             <td><?php echo $conta->getSaldo() ?></td>                            
                             <td class="hidden-sm hidden-xs text-right">                                                                
-                                <a href="<?php echo $url ?>" class="btn btn-success"><i class="fa fa-plus-circle"></i> Depositar</a>                                
-                                <a href="<?php echo $url ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i> Retirar</a>
+                                <a href="<?php echo $urlDep ?>" class="btn btn-success"><i class="fa fa-plus-circle"></i> Depositar</a>                                
+                                <a href="<?php echo $urlRet ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i> Retirar</a>
+                                <a href="<?php echo $urlTra ?>" class="btn btn-default"><i class="fa fa-chain"></i> Transações</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>                                            

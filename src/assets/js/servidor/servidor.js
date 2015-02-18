@@ -6,7 +6,7 @@ function Servidor() {
         e.preventDefault();
         $('#lstData').show();
         $('#lstSearch, #searchClean').hide();
-        $('#textName').focus();
+        $('#textNome').focus();
     };
 
     this.search = function (e) {

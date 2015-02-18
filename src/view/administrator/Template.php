@@ -23,7 +23,7 @@ global $_MyCookieGoBack;
         <?php $_MyCookie->RequireJS() ?>      
     </head>
     <body id="admin-body">        
-        <header id="admin-header" class="container">
+        <header id="admin-header" class="container hidden-print">
             <div class="row">                
                 <?php if ($_MyCookie->getModule() == 'administrator') : ?>
                     <div class="col-lg-6 col-sm-6 col-xs-5">
