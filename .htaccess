@@ -1,0 +1,14 @@
+# Enable PHP 5.4
+AddType application/x-httpd-php55 .php
+# BEGIN MyCookie
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]
+</IfModule>
+# END MyCookie
+<Files "config.json">
+Order Allow,Deny
+Deny from all
+</Files>

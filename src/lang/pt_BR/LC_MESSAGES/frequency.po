@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-01 09:16-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/view/frequency/Activities.manage.php:3
+msgid "Event activities"
+msgstr ""
+
+#: src/view/frequency/Activities.manage.php:8 src/view/frequency/Manage.php:7
+msgid "Stop searching"
+msgstr ""
+
+#: src/view/frequency/Activities.manage.php:9 src/view/frequency/Manage.php:8
+msgid "Quick search"
+msgstr ""
+
+#: src/view/frequency/Activities.manage.php:12
+#: src/view/frequency/Manage.php:10
+msgid "Search"
+msgstr ""
+
+#: src/view/frequency/Activities.manage.php:20
+#: src/view/frequency/Manage.php:18
+msgid "Results searching for"
+msgstr ""
+
+#: src/view/frequency/Activities.table.php:6
+#: src/view/frequency/Frequency.manage.php:9
+#: src/view/frequency/Frequency.table.php:6
+#: src/view/frequency/Manage.table.php:12 src/view/frequency/Print.php:22
+msgid "Name"
+msgstr "Nome"
+
+#: src/view/frequency/Activities.table.php:7
+#: src/view/frequency/Frequency.manage.php:13
+msgid "Registred"
+msgstr "Registrados"
+
+#: src/view/frequency/Activities.table.php:8
+#: src/view/frequency/Frequency.manage.php:17
+msgid "Confirmed"
+msgstr "Confirmados"
+
+#: src/view/frequency/Activities.table.php:9
+msgid "Presents"
+msgstr "Presentes"
+
+#: src/view/frequency/Activities.table.php:10
+msgid "Signature list"
+msgstr "Lista de assinaturas"
+
+#: src/view/frequency/Activities.table.php:26
+msgid "There is no registrations in this event at the moment"
+msgstr ""
+
+#: src/view/frequency/Frequency.manage.php:5
+msgid "Activity info"
+msgstr ""
+
+#: src/view/frequency/Frequency.table.php:24
+msgid "There is no participants in this activity"
+msgstr ""
+
+#: src/view/frequency/Manage.php:34
+msgid ""
+"There is no Event happening at this moment. If your event ended recently, "
+"try search for it (returns from now to 10 days ago)"
+msgstr ""
+
+#: src/view/frequency/Manage.table.php:13
+msgid "Organization"
+msgstr ""
+
+#: src/view/frequency/Manage.table.php:14
+msgid "Starts"
+msgstr ""
+
+#: src/view/frequency/Manage.table.php:15
+msgid "Ends"
+msgstr ""
+
+#: src/view/frequency/Manage.table.php:16
+msgid "Registred activities"
+msgstr ""
+
+#: src/view/frequency/Print.php:12
+msgid "administrative panel"
+msgstr ""
+
+#: src/view/frequency/Print.php:23
+msgid "Signature"
+msgstr ""
